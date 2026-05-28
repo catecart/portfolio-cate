@@ -84,12 +84,42 @@ const academics = {
   gpa: '4.2 / 4.0',
   year: 'Class of 2027',
   clubs: [
-    { name: 'National Honor Society',          role: 'Member', year: '2025 – 2027' },
-    { name: 'Link Crew',                       role: 'Member', year: '2026 – 2027' },
-    { name: 'Freshman Orientation & Guidance', role: 'Member', year: '2025'        },
-    { name: 'Ambassadors Club',                role: 'Member', year: '2026 – 2027' },
-    { name: 'Key Club',                        role: 'Member', year: '2023 – 2027' },
-    { name: 'Make-A-Wish Club',                role: 'Member', year: '2025 – 2027' },
+    {
+      name: 'National Honor Society',
+      role: 'Member',
+      year: '2025 – 2027',
+      description: 'Selected for National Honor Society based on academic excellence, outstanding character, and a demonstrated commitment to leadership and community service. Maintain a high GPA while actively contributing to school and community initiatives, exemplifying the core pillars of scholarship, leadership, service, and character.',
+    },
+    {
+      name: 'Link Crew',
+      role: 'Leader',
+      year: '2026 – 2027',
+      description: 'Selected as a Link Crew Leader, a competitive peer mentorship program dedicated to supporting incoming freshmen through their transition to high school. Facilitated orientation events, led small group discussions, and provided ongoing guidance to help new students build confidence, find their place, and navigate the academic and social demands of high school.',
+    },
+    {
+      name: 'Freshman Orientation & Guidance',
+      role: 'Mentor',
+      year: '2025',
+      description: 'Assisted in facilitating freshman orientation activities designed to help incoming students acclimate to the academic, social, and emotional demands of high school life. Guided new students in building meaningful peer connections, developing personal confidence, and establishing the foundation needed to thrive throughout their high school experience. Served as a trusted mentor and positive role model, offering ongoing support and encouragement beyond orientation events.',
+    },
+    {
+      name: 'Ambassadors Club',
+      role: 'Member',
+      year: '2026 – 2027',
+      description: 'Served as a member of the Ambassadors Club, actively supporting international students in their transition to a new school, culture, and way of life. Facilitated meaningful peer connections, provided ongoing guidance on navigating American academic and social norms, and fostered an inclusive, welcoming environment where every student felt valued, respected, and empowered to succeed regardless of their background or native language.',
+    },
+    {
+      name: 'Key Club',
+      role: 'Member',
+      year: '2023 – 2027',
+      description: 'Actively participated in a student-led service organization dedicated to community outreach, volunteerism, and creating meaningful, lasting impact at the local level. Collaborated with peers to plan and execute service initiatives, contributed countless volunteer hours to causes that uplifted underserved members of the community, and demonstrated a consistent commitment to civic responsibility, compassion, and the belief that students have the power to drive real change.',
+    },
+    {
+      name: 'Make-A-Wish Club',
+      role: 'Member',
+      year: '2025 – 2027',
+      description: 'Contributed to a student-run organization dedicated to raising funds and awareness in support of the Make-A-Wish Foundation, an organization committed to granting life-changing wishes to children battling critical illnesses. Participated in fundraising campaigns, awareness initiatives, and community engagement efforts that directly impacted the lives of children and families facing some of their most difficult moments, demonstrating a deep commitment to compassion, empathy, and service beyond self.',
+    },
   ],
   honors: ['High Honor Roll — 5 Semesters'],
   courses: [
@@ -162,10 +192,10 @@ function LinkedInIcon() {
   )
 }
 
-function PhoneIcon() {
+function EmailIcon() {
   return (
     <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
     </svg>
   )
 }
@@ -285,10 +315,13 @@ function AcademicsTab() {
             <div key={i} className="club-row">
               <div className="club-dot" />
               <div className="club-details">
-                <p className="club-name">{club.name}</p>
+                <div className="club-row-top">
+                  <p className="club-name">{club.name}</p>
+                  <span className="period-badge sm">{club.year}</span>
+                </div>
                 <p className="club-role">{club.role}</p>
+                {club.description && <p className="club-desc">{club.description}</p>}
               </div>
-              <span className="period-badge sm">{club.year}</span>
             </div>
           ))}
         </div>
@@ -349,16 +382,15 @@ export default function App() {
             <div className="hero-text">
               <span className="hero-eyebrow">Welcome to my world</span>
               <h1 className="hero-name">Catherine<br />Carter</h1>
-              <p className="hero-tagline">Student · Athlete · Future Leader</p>
+              <p className="hero-tagline">Student · Athlete · Future Attorney</p>
               <div className="contact-row">
                 <a href="https://www.linkedin.com/in/catherine-carter-b50421369/" target="_blank" rel="noreferrer" className="contact-btn linkedin-btn">
                   <LinkedInIcon />
                   Connect on LinkedIn
                 </a>
-                {/* Replace YOUR_PHONE_NUMBER with your number, e.g. +16302076605 */}
-                <a href="tel:YOUR_PHONE_NUMBER" className="contact-btn phone-btn">
-                  <PhoneIcon />
-                  Get in Touch
+                <a href="mailto:catecarter2@gmail.com" className="contact-btn phone-btn">
+                  <EmailIcon />
+                  Send an Email
                 </a>
               </div>
             </div>
@@ -366,7 +398,9 @@ export default function App() {
               <div className="blob blob-1" />
               <div className="blob blob-2" />
               <div className="blob blob-3" />
-              <div className="initials-ring">CC</div>
+              <div className="profile-ring">
+                <img src="/profile.png" alt="Catherine Carter" className="profile-photo" />
+              </div>
             </div>
           </div>
         </div>

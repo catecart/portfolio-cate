@@ -106,26 +106,26 @@
   flex-shrink: 0;
 }
 
-.initials-ring {
+.profile-ring {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 160px;
-  height: 160px;
+  width: 270px;
+  height: 270px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.55);
-  border: 3px solid rgba(201,107,138,0.35);
-  backdrop-filter: blur(12px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--rose);
+  border: 4px solid rgba(201,107,138,0.45);
+  box-shadow: 0 0 0 8px rgba(201,107,138,0.12), 0 12px 40px rgba(201,107,138,0.25);
+  overflow: hidden;
   z-index: 2;
-  letter-spacing: 0.05em;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .blob {
@@ -552,9 +552,9 @@
 
 .club-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
-  padding: 14px 0;
+  padding: 18px 0;
   border-bottom: 1px solid var(--blush-mid);
 }
 
@@ -570,18 +570,36 @@
 
 .club-details { flex: 1; }
 
+.club-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
 .club-name {
   font-family: 'Nunito', sans-serif;
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--text);
-  margin-bottom: 1px;
 }
 
 .club-role {
   font-family: 'Nunito', sans-serif;
   font-size: 0.78rem;
-  color: var(--text-muted);
+  font-weight: 600;
+  color: var(--rose);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.club-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.87rem;
+  color: var(--text-mid);
+  line-height: 1.7;
 }
 
 /* ===== FUTURE: ROADMAP ===== */
@@ -682,7 +700,7 @@
   .hero-name { font-size: 3.4rem; }
   .hero-layout { flex-direction: column-reverse; align-items: flex-start; }
   .hero-visual { width: 200px; height: 200px; align-self: center; }
-  .initials-ring { width: 120px; height: 120px; font-size: 2rem; }
+  .profile-ring { width: 150px; height: 150px; }
   .sport-row { flex-direction: column; align-items: flex-start; }
   .sport-highlights { justify-content: flex-start; }
   .sport-row-left { min-width: unset; }
