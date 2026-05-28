@@ -1,0 +1,40 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blush:        #FEF0F4;
+  --blush-mid:    #FAD9E5;
+  --blush-deep:   #F5C0D4;
+  --rose:         #C96B8A;
+  --rose-mid:     #D98EAA;
+  --rose-light:   #EBB8CC;
+  --lavender:     #D4789E;
+  --lavender-light: #EDCAD9;
+  --mint:         #E095B5;
+  --mint-light:   #F5D5E5;
+  --champagne:    #EDAFC8;
+  --champagne-light: #FAE0EC;
+  --text:         #2E1A24;
+  --text-mid:     #6B4055;
+  --text-muted:   #A87890;
+  --border:       rgba(201,107,138,0.15);
+  --shadow:       rgba(201,107,138,0.10);
+  --warm-white:   #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--blush);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+}
