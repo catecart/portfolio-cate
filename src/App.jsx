@@ -15,7 +15,7 @@ const experiences = [
     period: '2025 – Present',
     description: 'Supporting the team at Decennial Group, a professional services firm based in Chicago. Working directly alongside the General Counsel, gaining real-world legal and business experience in a professional workforce environment — including exposure to business operations, client work, and industry strategy.',
     tags: ['Business Operations', 'Professional Services', 'AI Research', 'VS Code', 'GitHub', 'Project Management'],
-    accent: '#C96B8A',
+    accent: '#E8819A',
   },
   {
     role: 'Youth Soccer Coach',
@@ -23,7 +23,7 @@ const experiences = [
     period: 'Spring 2024 – Spring 2025',
     description: 'Coached youth players as part of the Empire Juniors soccer program. Led practices, developed player skills, and fostered teamwork and sportsmanship in a competitive youth environment.',
     tags: ['Youth Coaching', 'Mentorship', 'Leadership', 'Communication', 'Organization'],
-    accent: '#D4789E',
+    accent: '#F0A0B8',
   },
   {
     role: 'Camp Counselor',
@@ -31,7 +31,7 @@ const experiences = [
     period: '2024 & 2026',
     description: 'Served as a camp counselor for two seasons at York Basketball Kids Camp. Guided and mentored youth players, assisted with drills and skill-building sessions, and helped create a fun, supportive environment for young athletes to develop their game.',
     tags: ['Youth Development', 'Leadership', 'Communication', 'Engagement', 'Adaptability', 'Conflict Resolution'],
-    accent: '#E095B5',
+    accent: '#E868A0',
   },
   {
     role: 'Lifeguard',
@@ -39,7 +39,7 @@ const experiences = [
     period: 'Summer 2024',
     description: 'Ensured the safety of swimmers and pool guests throughout the summer season. Maintained vigilant surveillance, responded to emergencies, and enforced aquatic safety policies.',
     tags: ['Safety', 'CPR / First Aid', 'Vigilance', 'Leadership', 'Confidence', 'Communication'],
-    accent: '#EDAFC8',
+    accent: '#F8C0D4',
   },
 ]
 
@@ -51,7 +51,7 @@ const sports = [
     description: 'Member of Varsity Soccer since Freshman year — demonstrating long-term commitment, teamwork, and perseverance through consistent participation and athletic development.',
     highlights: ['West Suburban All Conference (2025)', 'IHSSCA All Sectional (2025)'],
     emoji: '⚽',
-    color: '#C96B8A',
+    color: '#E8819A',
   },
   {
     sport: 'Varsity Basketball',
@@ -60,7 +60,7 @@ const sports = [
     description: 'Member of Varsity Basketball since Freshman year — highlighting exceptional dedication and athletic ability, developing strong teamwork, communication, and leadership skills through collaboration with teammates and coaches.',
     highlights: [],
     emoji: '🏀',
-    color: '#D4789E',
+    color: '#F0A0B8',
   },
   {
     sport: 'Club Soccer',
@@ -69,7 +69,7 @@ const sports = [
     description: 'Competes at the elite Girls Academy level, developing advanced skills and pursuing collegiate recruitment opportunities. Learning how to be adaptable while training with elite-level players.',
     highlights: [],
     emoji: '⭐',
-    color: '#E095B5',
+    color: '#E868A0',
   },
   {
     sport: 'Club Soccer',
@@ -78,7 +78,7 @@ const sports = [
     description: 'Competed at the club level for six years, building a strong foundation of technical skill, teamwork, and competitive experience. Through years of consistent training, travel tournaments, and high-level competition, developed a deep understanding of the game and a strong work ethic that carries beyond the field. Demonstrates loyalty and dedication.',
     highlights: [],
     emoji: '🏆',
-    color: '#EDAFC8',
+    color: '#F8C0D4',
   },
 ]
 
@@ -141,49 +141,49 @@ const goals = [
     timeframe: '2027',
     description: 'Graduate from York Community High School in Elmhurst, IL — closing out four years of academic excellence, athletics, and leadership.',
     icon: '🎓',
-    color: '#C96B8A',
+    color: '#E8819A',
   },
   {
     title: 'Begin College & Collegiate Soccer',
     timeframe: '2027',
     description: 'Start my undergraduate journey while competing as a collegiate soccer player — balancing academics and athletics at the next level.',
     icon: '⚽',
-    color: '#D4789E',
+    color: '#F0A0B8',
   },
   {
     title: 'LSAT Prep',
     timeframe: '2029 – 2030',
     description: 'Begin preparing for the LSAT during my junior year of undergrad, taking a focused step toward law school admission.',
     icon: '📖',
-    color: '#E095B5',
+    color: '#E868A0',
   },
   {
     title: 'College Graduation',
     timeframe: '2031',
     description: 'Earn my Bachelor\'s degree in Psychology — building a foundation of human behavior, critical thinking, and communication for a legal career.',
     icon: '🎉',
-    color: '#EDAFC8',
+    color: '#F8C0D4',
   },
   {
     title: 'Apply to Law School & Begin',
     timeframe: '2031',
     description: 'Submit law school applications and begin my JD program, putting years of preparation and drive into motion.',
     icon: '⚖️',
-    color: '#C96B8A',
+    color: '#E8819A',
   },
   {
     title: 'Law School Graduation',
     timeframe: '2034',
     description: 'Graduate with a Juris Doctor (JD) degree — completing three years of intensive legal education and advocacy training.',
     icon: '📜',
-    color: '#D4789E',
+    color: '#F0A0B8',
   },
   {
     title: 'Bar Exam',
     timeframe: '2035',
     description: 'Sit for the bar exam and earn my license to practice law — the final milestone on the path to becoming an attorney.',
     icon: '✨',
-    color: '#E095B5',
+    color: '#E868A0',
   },
 ]
 
