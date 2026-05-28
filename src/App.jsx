@@ -18,12 +18,20 @@ const experiences = [
     accent: '#C96B8A',
   },
   {
+    role: 'Youth Soccer Coach',
+    company: 'Empire Juniors · Oak Brook, IL',
+    period: 'Spring 2024 – Spring 2025',
+    description: 'Coached youth players as part of the Empire Juniors soccer program. Led practices, developed player skills, and fostered teamwork and sportsmanship in a competitive youth environment.',
+    tags: ['Youth Coaching', 'Mentorship', 'Leadership', 'Communication', 'Organization'],
+    accent: '#D4789E',
+  },
+  {
     role: 'Camp Counselor',
     company: 'York Basketball Kids Camp',
     period: '2024 & 2026',
     description: 'Served as a camp counselor for two seasons at York Basketball Kids Camp. Guided and mentored youth players, assisted with drills and skill-building sessions, and helped create a fun, supportive environment for young athletes to develop their game.',
     tags: ['Youth Development', 'Leadership', 'Communication', 'Engagement', 'Adaptability', 'Conflict Resolution'],
-    accent: '#D4789E',
+    accent: '#E095B5',
   },
   {
     role: 'Lifeguard',
@@ -31,14 +39,6 @@ const experiences = [
     period: 'Summer 2024',
     description: 'Ensured the safety of swimmers and pool guests throughout the summer season. Maintained vigilant surveillance, responded to emergencies, and enforced aquatic safety policies.',
     tags: ['Safety', 'CPR / First Aid', 'Vigilance', 'Leadership', 'Confidence', 'Communication'],
-    accent: '#E095B5',
-  },
-  {
-    role: 'Youth Soccer Coach',
-    company: 'Empire Juniors · Oak Brook, IL',
-    period: 'Spring 2024 – Spring 2025',
-    description: 'Coached youth players as part of the Empire Juniors soccer program. Led practices, developed player skills, and fostered teamwork and sportsmanship in a competitive youth environment.',
-    tags: ['Youth Coaching', 'Mentorship', 'Leadership', 'Communication', 'Organization'],
     accent: '#EDAFC8',
   },
 ]
@@ -89,22 +89,10 @@ const academics = {
   year: 'Class of 2027',
   clubs: [
     {
-      name: 'National Honor Society',
-      role: 'Member',
-      year: '2025 – 2027',
-      description: 'Selected for National Honor Society based on academic excellence, outstanding character, and a demonstrated commitment to leadership and community service. Maintain a high GPA while actively contributing to school and community initiatives, exemplifying the core pillars of scholarship, leadership, service, and character.',
-    },
-    {
       name: 'Link Crew',
       role: 'Leader',
       year: '2026 – 2027',
       description: 'Selected as a Link Crew Leader, a competitive peer mentorship program dedicated to supporting incoming freshmen through their transition to high school. Facilitated orientation events, led small group discussions, and provided ongoing guidance to help new students build confidence, find their place, and navigate the academic and social demands of high school.',
-    },
-    {
-      name: 'Freshman Orientation & Guidance',
-      role: 'Mentor',
-      year: '2025',
-      description: 'Assisted in facilitating freshman orientation activities designed to help incoming students acclimate to the academic, social, and emotional demands of high school life. Guided new students in building meaningful peer connections, developing personal confidence, and establishing the foundation needed to thrive throughout their high school experience. Served as a trusted mentor and positive role model, offering ongoing support and encouragement beyond orientation events.',
     },
     {
       name: 'Ambassadors Club',
@@ -113,16 +101,28 @@ const academics = {
       description: 'Served as a member of the Ambassadors Club, actively supporting international students in their transition to a new school, culture, and way of life. Facilitated meaningful peer connections, provided ongoing guidance on navigating American academic and social norms, and fostered an inclusive, welcoming environment where every student felt valued, respected, and empowered to succeed regardless of their background or native language.',
     },
     {
-      name: 'Key Club',
+      name: 'National Honor Society',
       role: 'Member',
-      year: '2023 – 2027',
-      description: 'Actively participated in a student-led service organization dedicated to community outreach, volunteerism, and creating meaningful, lasting impact at the local level. Collaborated with peers to plan and execute service initiatives, contributed countless volunteer hours to causes that uplifted underserved members of the community, and demonstrated a consistent commitment to civic responsibility, compassion, and the belief that students have the power to drive real change.',
+      year: '2025 – 2027',
+      description: 'Selected for National Honor Society based on academic excellence, outstanding character, and a demonstrated commitment to leadership and community service. Maintain a high GPA while actively contributing to school and community initiatives, exemplifying the core pillars of scholarship, leadership, service, and character.',
     },
     {
       name: 'Make-A-Wish Club',
       role: 'Member',
       year: '2025 – 2027',
       description: 'Contributed to a student-run organization dedicated to raising funds and awareness in support of the Make-A-Wish Foundation, an organization committed to granting life-changing wishes to children battling critical illnesses. Participated in fundraising campaigns, awareness initiatives, and community engagement efforts that directly impacted the lives of children and families facing some of their most difficult moments, demonstrating a deep commitment to compassion, empathy, and service beyond self.',
+    },
+    {
+      name: 'Freshman Orientation & Guidance',
+      role: 'Mentor',
+      year: '2025',
+      description: 'Assisted in facilitating freshman orientation activities designed to help incoming students acclimate to the academic, social, and emotional demands of high school life. Guided new students in building meaningful peer connections, developing personal confidence, and establishing the foundation needed to thrive throughout their high school experience. Served as a trusted mentor and positive role model, offering ongoing support and encouragement beyond orientation events.',
+    },
+    {
+      name: 'Key Club',
+      role: 'Member',
+      year: '2023 – 2027',
+      description: 'Actively participated in a student-led service organization dedicated to community outreach, volunteerism, and creating meaningful, lasting impact at the local level. Collaborated with peers to plan and execute service initiatives, contributed countless volunteer hours to causes that uplifted underserved members of the community, and demonstrated a consistent commitment to civic responsibility, compassion, and the belief that students have the power to drive real change.',
     },
   ],
   honors: ['High Honor Roll — 5 Semesters'],
