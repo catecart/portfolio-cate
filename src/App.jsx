@@ -48,7 +48,8 @@ const sports = [
     sport: 'Varsity Soccer',
     team: 'York High School',
     years: '2023 – Present',
-    highlights: ['West Suburban All Conference (2025)', 'IHSSCA All Sectional (2025)', 'Varsity starter since Freshman year'],
+    description: 'Member of Varsity Soccer since Freshman year — demonstrating long-term commitment, teamwork, and perseverance through consistent participation and athletic development.',
+    highlights: ['West Suburban All Conference (2025)', 'IHSSCA All Sectional (2025)'],
     emoji: '⚽',
     color: '#C96B8A',
   },
@@ -56,7 +57,8 @@ const sports = [
     sport: 'Varsity Basketball',
     team: 'York High School',
     years: '2023 – Present',
-    highlights: ['Varsity starter since Freshman year'],
+    description: 'Member of Varsity Basketball since Freshman year — highlighting exceptional dedication and athletic ability, developing strong teamwork, communication, and leadership skills through collaboration with teammates and coaches.',
+    highlights: [],
     emoji: '🏀',
     color: '#D4789E',
   },
@@ -64,7 +66,8 @@ const sports = [
     sport: 'Club Soccer',
     team: 'Sockers FC Girls Academy 08',
     years: 'June 2025 – Present',
-    highlights: ['Selected for Girls Academy 08 team'],
+    description: 'Competes at the elite Girls Academy level, developing advanced skills and pursuing collegiate recruitment opportunities. Learning how to be adaptable while training with elite-level players.',
+    highlights: [],
     emoji: '⭐',
     color: '#E095B5',
   },
@@ -72,7 +75,8 @@ const sports = [
     sport: 'Club Soccer',
     team: 'Empire FC G08',
     years: 'Aug 2019 – May 2025',
-    highlights: ['Nearly 6 years of competitive club soccer', 'Foundational development through elite training'],
+    description: 'Competed at the club level for six years, building a strong foundation of technical skill, teamwork, and competitive experience. Through years of consistent training, travel tournaments, and high-level competition, developed a deep understanding of the game and a strong work ethic that carries beyond the field. Demonstrates loyalty and dedication.',
+    highlights: [],
     emoji: '🏆',
     color: '#EDAFC8',
   },
@@ -247,20 +251,21 @@ function AthleticsTab() {
       <div className="sport-list">
         {sports.map((sport, i) => (
           <div key={i} className="sport-row" style={{ '--sport-color': sport.color }}>
-            <div className="sport-row-left">
-              <div className="sport-icon-wrap">
-                <span className="sport-icon">{sport.emoji}</span>
-              </div>
-              <div className="sport-info">
-                <h3 className="sport-name">{sport.sport}</h3>
-                <p className="sport-team">{sport.team}</p>
-                <p className="sport-years">{sport.years}</p>
-              </div>
+            <div className="sport-icon-wrap">
+              <span className="sport-icon">{sport.emoji}</span>
             </div>
-            <div className="sport-highlights">
-              {sport.highlights.map((h, j) => (
-                <span key={j} className="highlight-pill">{h}</span>
-              ))}
+            <div className="sport-info">
+              <h3 className="sport-name">{sport.sport}</h3>
+              <p className="sport-team">{sport.team}</p>
+              <p className="sport-years">{sport.years}</p>
+              {sport.description && <p className="sport-desc">{sport.description}</p>}
+              {sport.highlights.length > 0 && (
+                <div className="sport-awards">
+                  {sport.highlights.map((h, j) => (
+                    <p key={j} className="sport-award">⭐ {h}</p>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         ))}
