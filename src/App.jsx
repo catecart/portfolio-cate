@@ -13,7 +13,7 @@ const experiences = [
     role: 'Intern',
     company: 'Decennial Group · Chicago, IL',
     period: '2025 – Present',
-    description: 'Supporting the team at Decennial Group, a professional services firm based in Chicago. Working directly alongside leadership to gain real-world exposure to business operations, client work, and industry strategy.',
+    description: 'Supporting the team at Decennial Group, a professional services firm based in Chicago. Working directly alongside the General Counsel, gaining real-world legal and business experience in a professional workforce environment — including exposure to business operations, client work, and industry strategy.',
     tags: ['Business Operations', 'Professional Services', 'AI Research', 'VS Code', 'GitHub', 'Project Management'],
     accent: '#C96B8A',
   },
