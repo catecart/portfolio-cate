@@ -92,36 +92,48 @@ const academics = {
       name: 'Link Crew',
       role: 'Leader',
       year: '2026 – 2027',
+      emoji: '🔗',
+      color: '#E8819A',
       description: 'Selected as a Link Crew Leader, a competitive peer mentorship program dedicated to supporting incoming freshmen through their transition to high school. Facilitated orientation events, led small group discussions, and provided ongoing guidance to help new students build confidence, find their place, and navigate the academic and social demands of high school.',
     },
     {
       name: 'Ambassadors Club',
       role: 'Member',
       year: '2026 – 2027',
+      emoji: '🌍',
+      color: '#F0A0B8',
       description: 'Served as a member of the Ambassadors Club, actively supporting international students in their transition to a new school, culture, and way of life. Facilitated meaningful peer connections, provided ongoing guidance on navigating American academic and social norms, and fostered an inclusive, welcoming environment where every student felt valued, respected, and empowered to succeed regardless of their background or native language.',
     },
     {
       name: 'National Honor Society',
       role: 'Member',
       year: '2025 – 2027',
+      emoji: '🏅',
+      color: '#E868A0',
       description: 'Selected for National Honor Society based on academic excellence, outstanding character, and a demonstrated commitment to leadership and community service. Contributed over 40 hours of community service, maintaining a high GPA while actively contributing to school and community initiatives and exemplifying the core pillars of scholarship, leadership, service, and character.',
     },
     {
       name: 'Make-A-Wish Club',
       role: 'Member',
       year: '2025 – 2027',
+      emoji: '⭐',
+      color: '#F8C0D4',
       description: 'Contributed to a student-run organization dedicated to raising funds and awareness in support of the Make-A-Wish Foundation, an organization committed to granting life-changing wishes to children battling critical illnesses. Helped raise over $2,000 this year through fundraising campaigns, awareness initiatives, and community engagement efforts that directly impacted the lives of children and families facing some of their most difficult moments — demonstrating a deep commitment to compassion, empathy, and service beyond self.',
     },
     {
       name: 'Freshman Orientation & Guidance',
       role: 'Mentor',
       year: '2025',
+      emoji: '🧭',
+      color: '#D4609A',
       description: 'Assisted in facilitating freshman orientation activities designed to help incoming students acclimate to the academic, social, and emotional demands of high school life. Personally mentored 30 incoming students over the course of the year, guiding them in building meaningful peer connections, developing personal confidence, and establishing the foundation needed to thrive throughout their high school experience. Served as a trusted mentor and positive role model, offering ongoing support and encouragement beyond orientation events.',
     },
     {
       name: 'Key Club',
       role: 'Member',
       year: '2023 – 2027',
+      emoji: '🔑',
+      color: '#F0A0B8',
       description: 'Actively participated in a student-led service organization dedicated to community outreach, volunteerism, and creating meaningful, lasting impact at the local level. Collaborated with peers to plan and execute service initiatives, contributed countless volunteer hours to causes that uplifted underserved members of the community, and demonstrated a consistent commitment to civic responsibility, compassion, and the belief that students have the power to drive real change.',
     },
   ],
@@ -235,6 +247,7 @@ function ExperienceTab() {
           </div>
         ))}
       </div>
+
     </div>
   )
 }
@@ -315,17 +328,24 @@ function AcademicsTab() {
 
       <div className="acad-section">
         <h3 className="acad-section-title">Clubs & Organizations</h3>
-        <div className="club-rows">
+        <p className="flip-hint">Hover over a card to learn more</p>
+        <div className="club-grid">
           {academics.clubs.map((club, i) => (
-            <div key={i} className="club-row">
-              <div className="club-dot" />
-              <div className="club-details">
-                <div className="club-row-top">
-                  <p className="club-name">{club.name}</p>
-                  <span className="period-badge sm">{club.year}</span>
+            <div key={i} className="club-flip">
+              <div className="club-flip-inner">
+                <div className="club-front" style={{ '--c': club.color }}>
+                  <span className="club-emoji">{club.emoji}</span>
+                  <h4 className="club-front-name">{club.name}</h4>
+                  <span className="club-front-role" style={{ color: club.color }}>{club.role}</span>
+                  <span className="club-front-year">{club.year}</span>
                 </div>
-                <p className="club-role">{club.role}</p>
-                {club.description && <p className="club-desc">{club.description}</p>}
+                <div className="club-back" style={{ '--c': club.color }}>
+                  <div className="club-back-header">
+                    <span className="club-emoji-sm">{club.emoji}</span>
+                    <h4 className="club-back-name">{club.name}</h4>
+                  </div>
+                  <p className="club-back-desc">{club.description}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -350,22 +370,33 @@ function FutureTab() {
         <p className="why-law-text">My internship in the city gave me my first real look at the professional world, and it confirmed something I'd been thinking about for a while: I'm drawn to environments where critical thinking, preparation, and precision actually matter. The same focus I bring to the soccer field or the basketball court — studying the opponent, adapting under pressure, performing when it counts — is the same energy I want to bring to a legal career.</p>
       </div>
 
-      <div className="roadmap">
-        {goals.map((goal, i) => (
-          <div key={i} className="roadmap-stop">
-            <div className="roadmap-left">
-              <div className="roadmap-circle" style={{ background: goal.color + '22', borderColor: goal.color + '55' }}>
-                <span className="roadmap-emoji">{goal.icon}</span>
+      <div className="zz-timeline">
+        {goals.map((goal, i) => {
+          const isLeft = i % 2 === 0
+          const card = (
+            <div className={`zz-card ${isLeft ? 'zz-card-left' : 'zz-card-right'}`} style={{ '--c': goal.color }}>
+              <span className="zz-year" style={{ color: goal.color }}>{goal.timeframe}</span>
+              <h3 className="zz-title">{goal.title}</h3>
+              <p className="zz-desc">{goal.description}</p>
+            </div>
+          )
+          return (
+            <div key={i} className="zz-row">
+              <div className="zz-side zz-side-left">
+                {isLeft && card}
               </div>
-              {i < goals.length - 1 && <div className="roadmap-line" style={{ background: `linear-gradient(to bottom, ${goal.color}55, ${goals[i+1].color}55)` }} />}
+              <div className="zz-spine">
+                <div className="zz-dot" style={{ '--c': goal.color }}>
+                  <span className="zz-icon">{goal.icon}</span>
+                </div>
+                {i < goals.length - 1 && <div className="zz-vline" />}
+              </div>
+              <div className="zz-side zz-side-right">
+                {!isLeft && card}
+              </div>
             </div>
-            <div className="roadmap-card">
-              <span className="roadmap-timeframe" style={{ color: goal.color }}>{goal.timeframe}</span>
-              <h3 className="roadmap-title">{goal.title}</h3>
-              <p className="roadmap-desc">{goal.description}</p>
-            </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

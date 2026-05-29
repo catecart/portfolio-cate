@@ -550,6 +550,123 @@
   font-family: 'Nunito', sans-serif;
 }
 
+.flip-hint {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.club-flip {
+  height: 230px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.club-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s ease;
+}
+
+.club-flip:hover .club-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.club-front,
+.club-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  background: var(--warm-white);
+  padding: 24px 20px;
+  box-shadow: 0 2px 14px var(--shadow);
+}
+
+.club-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top: 3px solid var(--c, var(--rose));
+  gap: 8px;
+}
+
+.club-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-top: 3px solid var(--c, var(--rose));
+  overflow: hidden;
+}
+
+.club-emoji {
+  font-size: 2.4rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.club-front-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.club-front-role {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.club-front-year {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.club-back-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.club-emoji-sm { font-size: 1.1rem; }
+
+.club-back-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c, var(--rose));
+}
+
+.club-back-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  overflow-y: auto;
+}
+
 .club-rows {
   display: flex;
   flex-direction: column;
@@ -637,84 +754,120 @@
 
 .why-law-text:last-child { margin-bottom: 0; }
 
-/* ===== FUTURE: ROADMAP ===== */
-.roadmap {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-width: 700px;
+/* ===== FUTURE: ZIGZAG TIMELINE ===== */
+.zz-timeline {
+  position: relative;
+  max-width: 960px;
   margin: 0 auto;
 }
 
-.roadmap-stop {
-  display: flex;
-  gap: 28px;
-  align-items: flex-start;
+.zz-row {
+  display: grid;
+  grid-template-columns: 1fr 64px 1fr;
+  min-height: 150px;
 }
 
-.roadmap-left {
+.zz-side {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.zz-side-left { justify-content: flex-end; padding-right: 0; }
+.zz-side-right { justify-content: flex-start; padding-left: 0; }
+
+.zz-spine {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0;
 }
 
-.roadmap-circle {
-  width: 60px;
-  height: 60px;
+.zz-dot {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  border: 2px solid;
+  border: 2px solid var(--c, var(--rose));
+  background: rgba(232,129,154,0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  z-index: 2;
   flex-shrink: 0;
-}
-
-.roadmap-line {
-  width: 2px;
-  height: 48px;
-  border-radius: 2px;
-  margin: 6px 0;
-}
-
-.roadmap-card {
-  background: var(--warm-white);
-  border-radius: 16px;
-  border: 1.5px solid var(--border);
-  padding: 24px 28px;
-  box-shadow: 0 2px 14px var(--shadow);
-  flex: 1;
-  margin-bottom: 16px;
+  margin-top: 24px;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--c, var(--rose)) 40%, transparent);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.roadmap-card:hover {
-  transform: translateX(4px);
-  box-shadow: 0 6px 24px rgba(201,107,138,0.13);
+.zz-dot:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--c, var(--rose)) 60%, transparent);
 }
 
-.roadmap-timeframe {
+.zz-icon { line-height: 1; }
+
+.zz-vline {
+  flex: 1;
+  width: 2px;
+  min-height: 40px;
+  background: linear-gradient(to bottom, rgba(232,129,154,0.35), rgba(232,129,154,0.08));
+  border-radius: 2px;
+}
+
+.zz-card {
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-top: 3px solid var(--c, var(--rose));
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 14px var(--shadow);
+  width: 100%;
+  position: relative;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+
+.zz-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(232,129,154,0.16);
+}
+
+/* horizontal connector lines */
+.zz-card-left::after,
+.zz-card-right::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 2px;
+  background: rgba(232,129,154,0.35);
+}
+
+.zz-card-left  { margin-right: 8px; }
+.zz-card-left::after  { right: -28px; }
+.zz-card-right { margin-left: 8px; }
+.zz-card-right::before { left: -28px; }
+
+.zz-year {
   display: block;
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
   margin-bottom: 6px;
 }
 
-.roadmap-title {
+.zz-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.roadmap-desc {
+.zz-desc {
   font-family: 'Nunito', sans-serif;
-  font-size: 0.93rem;
+  font-size: 0.87rem;
   color: var(--text-mid);
   line-height: 1.7;
 }
