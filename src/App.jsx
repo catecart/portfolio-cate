@@ -104,19 +104,19 @@ const academics = {
       name: 'National Honor Society',
       role: 'Member',
       year: '2025 – 2027',
-      description: 'Selected for National Honor Society based on academic excellence, outstanding character, and a demonstrated commitment to leadership and community service. Maintain a high GPA while actively contributing to school and community initiatives, exemplifying the core pillars of scholarship, leadership, service, and character.',
+      description: 'Selected for National Honor Society based on academic excellence, outstanding character, and a demonstrated commitment to leadership and community service. Contributed over 40 hours of community service, maintaining a high GPA while actively contributing to school and community initiatives and exemplifying the core pillars of scholarship, leadership, service, and character.',
     },
     {
       name: 'Make-A-Wish Club',
       role: 'Member',
       year: '2025 – 2027',
-      description: 'Contributed to a student-run organization dedicated to raising funds and awareness in support of the Make-A-Wish Foundation, an organization committed to granting life-changing wishes to children battling critical illnesses. Participated in fundraising campaigns, awareness initiatives, and community engagement efforts that directly impacted the lives of children and families facing some of their most difficult moments, demonstrating a deep commitment to compassion, empathy, and service beyond self.',
+      description: 'Contributed to a student-run organization dedicated to raising funds and awareness in support of the Make-A-Wish Foundation, an organization committed to granting life-changing wishes to children battling critical illnesses. Helped raise over $2,000 this year through fundraising campaigns, awareness initiatives, and community engagement efforts that directly impacted the lives of children and families facing some of their most difficult moments — demonstrating a deep commitment to compassion, empathy, and service beyond self.',
     },
     {
       name: 'Freshman Orientation & Guidance',
       role: 'Mentor',
       year: '2025',
-      description: 'Assisted in facilitating freshman orientation activities designed to help incoming students acclimate to the academic, social, and emotional demands of high school life. Guided new students in building meaningful peer connections, developing personal confidence, and establishing the foundation needed to thrive throughout their high school experience. Served as a trusted mentor and positive role model, offering ongoing support and encouragement beyond orientation events.',
+      description: 'Assisted in facilitating freshman orientation activities designed to help incoming students acclimate to the academic, social, and emotional demands of high school life. Personally mentored 30 incoming students over the course of the year, guiding them in building meaningful peer connections, developing personal confidence, and establishing the foundation needed to thrive throughout their high school experience. Served as a trusted mentor and positive role model, offering ongoing support and encouragement beyond orientation events.',
     },
     {
       name: 'Key Club',
@@ -344,6 +344,12 @@ function FutureTab() {
         <p className="section-subtitle">Where I'm going</p>
       </div>
 
+      <div className="why-law-card">
+        <h3 className="why-law-title">Why Law?</h3>
+        <p className="why-law-text">Growing up as a competitive athlete, I learned early that rules aren't just boundaries — they're the framework that makes fair competition possible. That idea has stuck with me. Law is what holds systems accountable, protects people who can't protect themselves, and shapes how society functions at every level.</p>
+        <p className="why-law-text">My internship in the city gave me my first real look at the professional world, and it confirmed something I'd been thinking about for a while: I'm drawn to environments where critical thinking, preparation, and precision actually matter. The same focus I bring to the soccer field or the basketball court — studying the opponent, adapting under pressure, performing when it counts — is the same energy I want to bring to a legal career.</p>
+      </div>
+
       <div className="roadmap">
         {goals.map((goal, i) => (
           <div key={i} className="roadmap-stop">
@@ -388,6 +394,8 @@ export default function App() {
               <span className="hero-eyebrow">Welcome to my world</span>
               <h1 className="hero-name">Catherine<br />Carter</h1>
               <p className="hero-tagline">Student · Athlete · Future Attorney</p>
+              <p className="hero-bio">I'm a 17-year-old high school student balancing academics, athletics, and real-world work experience. I compete in both club and varsity soccer and play varsity basketball, and I'm currently interning in the city — gaining hands-on professional experience while still in school.</p>
+              <p className="hero-bio">I thrive under pressure — whether that's a close game or a fast-paced work environment. Competing at a high level in sport has taught me discipline, teamwork, and how to push through challenges. I bring that same mindset to everything I do.</p>
               <div className="contact-row">
                 <a href="https://www.linkedin.com/in/catherine-carter-b50421369/" target="_blank" rel="noreferrer" className="contact-btn linkedin-btn">
                   <LinkedInIcon />

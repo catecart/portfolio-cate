@@ -62,10 +62,20 @@
   letter-spacing: 0.06em;
 }
 
+.hero-bio {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.8;
+  margin-bottom: 12px;
+  max-width: 520px;
+}
+
 .contact-row {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: 8px;
 }
 
 .contact-btn {
@@ -597,6 +607,35 @@
   color: var(--text-mid);
   line-height: 1.7;
 }
+
+/* ===== WHY LAW ===== */
+.why-law-card {
+  background: var(--warm-white);
+  border: 1.5px solid var(--border);
+  border-left: 5px solid var(--rose);
+  border-radius: 16px;
+  padding: 32px 36px;
+  box-shadow: 0 2px 20px var(--shadow);
+  margin-bottom: 48px;
+}
+
+.why-law-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--rose);
+  margin-bottom: 16px;
+}
+
+.why-law-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 12px;
+}
+
+.why-law-text:last-child { margin-bottom: 0; }
 
 /* ===== FUTURE: ROADMAP ===== */
 .roadmap {
