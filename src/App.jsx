@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
 const TABS = [
@@ -198,6 +198,78 @@ const goals = [
     color: '#E868A0',
   },
 ]
+
+/* ── Typing Tagline ─────────────────────────────── */
+function TypingTagline() {
+  const full = 'Student · Athlete · Future Attorney'
+  const [text, setText] = useState('')
+  const done = text.length >= full.length
+
+  useEffect(() => {
+    if (done) return
+    const t = setTimeout(() => setText(full.slice(0, text.length + 1)), 55)
+    return () => clearTimeout(t)
+  }, [text, done])
+
+  return (
+    <p className="hero-tagline">
+      {text}
+      {!done && <span className="typing-cursor">|</span>}
+    </p>
+  )
+}
+
+/* ── Animated Counter Stat ──────────────────────── */
+function CounterStat({ value, prefix = '', suffix = '', label, decimals = 0 }) {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const started = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting || started.current) return
+      started.current = true
+      const duration = 1600
+      const steps = 60
+      let step = 0
+      const id = setInterval(() => {
+        step++
+        const eased = 1 - Math.pow(1 - step / steps, 3)
+        const cur = +(value * eased).toFixed(decimals)
+        setCount(step >= steps ? value : cur)
+        if (step >= steps) clearInterval(id)
+      }, duration / steps)
+    }, { threshold: 0.3 })
+    if (el) observer.observe(el)
+    return () => observer.disconnect()
+  }, [value, decimals])
+
+  const display = count >= 1000
+    ? count.toLocaleString()
+    : decimals > 0 ? count.toFixed(decimals) : count
+
+  return (
+    <div className="stat-item" ref={ref}>
+      <span className="stat-number">{prefix}{display}{suffix}</span>
+      <span className="stat-label">{label}</span>
+    </div>
+  )
+}
+
+/* ── Stats Strip ────────────────────────────────── */
+function StatsStrip() {
+  return (
+    <div className="stats-strip">
+      <CounterStat value={14}   suffix="+" label="Years Playing Soccer" />
+      <CounterStat value={4.2}  decimals={1} label="GPA" />
+      <CounterStat value={5}    label="Semesters Honor Roll" />
+      <CounterStat value={2000} prefix="$" suffix="+" label="Raised for Make-A-Wish" />
+      <CounterStat value={40}   suffix="+" label="Community Service Hrs" />
+      <CounterStat value={30}   suffix="+" label="Students Mentored" />
+    </div>
+  )
+}
 
 /* ── Icons ─────────────────────────────────────── */
 function LinkedInIcon() {
@@ -424,7 +496,7 @@ export default function App() {
             <div className="hero-text">
               <span className="hero-eyebrow">Welcome to my world</span>
               <h1 className="hero-name">Catherine<br />Carter</h1>
-              <p className="hero-tagline">Student · Athlete · Future Attorney</p>
+              <TypingTagline />
               <p className="hero-bio">I'm a 17-year-old high school student balancing academics, athletics, and real-world work experience. I compete in both club and varsity soccer and play varsity basketball, and I'm currently interning in the city — gaining hands-on professional experience while still in school.</p>
               <p className="hero-bio">I thrive under pressure — whether that's a close game or a fast-paced work environment. Competing at a high level in sport has taught me discipline, teamwork, and how to push through challenges. I bring that same mindset to everything I do.</p>
               <div className="contact-row">
@@ -447,6 +519,7 @@ export default function App() {
               </div>
             </div>
           </div>
+          <StatsStrip />
         </div>
       </header>
 

@@ -41,3 +41,9 @@ body {
 h1, h2, h3, h4 {
   font-family: 'Cormorant Garamond', serif;
 }
+
+/* Custom pink scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--rose-mid); }
